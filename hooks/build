@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 VERSION_ARG=""
-if [ "$DOCKER_TAG" != "master" ]; then
+if [ "$DOCKER_TAG" != "master" ] && [ "$DOCKER_TAG" != "latest" ]; then
   VERSION_ARG="==$DOCKER_TAG"
 fi
 
