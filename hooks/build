@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+VERSION_ARG=""
+if [ "$DOCKER_TAG" != "master" ]; then
+  VERSION_ARG="==$DOCKER_TAG"
+fi
+
+docker build --build-arg VERSION_ARG="$VERSION_ARG" -t ${IMAGE_NAME} .
